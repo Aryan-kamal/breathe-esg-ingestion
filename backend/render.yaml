@@ -12,7 +12,7 @@ services:
     plan: free
     rootDir: backend
     buildCommand: ./build.sh
-    startCommand: ./start.sh
+    startCommand: bash start.sh
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.3"

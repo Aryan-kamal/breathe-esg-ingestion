@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import PageHeader from '../components/PageHeader';
 import {
   useReactTable,
   getCoreRowModel,
@@ -14,6 +15,7 @@ const SOURCE_LABELS = { sap: 'SAP', utility: 'Utility', travel: 'Travel' };
 
 export default function ReviewPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
   const [page, setPage] = useState(1);
@@ -22,7 +24,11 @@ export default function ReviewPage() {
   const [bulkLoading, setBulkLoading] = useState(false);
 
   const [filters, setFilters] = useState({
-    scope: '', source_type: '', status: '', suspicious: '', search: '',
+    scope: searchParams.get('scope') || '',
+    source_type: searchParams.get('source_type') || '',
+    status: searchParams.get('status') || '',
+    suspicious: searchParams.get('suspicious') === 'true' ? 'true' : '',
+    search: searchParams.get('search') || '',
   });
 
   const fetchData = () => {
@@ -181,29 +187,31 @@ export default function ReviewPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-bold text-gray-900">Review Records</h2>
+      <PageHeader
+        badge="Analyst workflow"
+        title="Review emission records"
+        description="Approve, reject, or flag normalized rows before locking them for audit. Click a row to compare raw source data with normalized values."
+      >
         {selected.size > 0 && (
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-sm text-gray-500">{selected.size} selected</span>
             <button onClick={() => handleBulk('approved')} disabled={bulkLoading}
-              className="px-3 py-1 text-xs font-medium bg-green-600 text-white rounded hover:bg-green-700 transition">
-              Approve All
+              className="px-3 py-1.5 text-xs font-medium bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+              Approve all
             </button>
             <button onClick={() => handleBulk('rejected')} disabled={bulkLoading}
-              className="px-3 py-1 text-xs font-medium bg-red-600 text-white rounded hover:bg-red-700 transition">
-              Reject All
+              className="px-3 py-1.5 text-xs font-medium bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+              Reject all
             </button>
             <button onClick={() => handleBulk('locked')} disabled={bulkLoading}
-              className="px-3 py-1 text-xs font-medium bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
-              Lock All
+              className="px-3 py-1.5 text-xs font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+              Lock all
             </button>
           </div>
         )}
-      </div>
+      </PageHeader>
 
-      {/* Filters */}
-      <div className="flex flex-wrap gap-3 mb-4">
+      <div className="flex flex-wrap gap-3 mb-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
         <select value={filters.scope} onChange={(e) => { setFilters((f) => ({ ...f, scope: e.target.value })); setPage(1); }}
           className="text-sm border border-gray-300 rounded-md px-3 py-1.5 bg-white">
           <option value="">All Scopes</option>
@@ -242,8 +250,7 @@ export default function ReviewPage() {
         />
       </div>
 
-      {/* Table */}
-      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-gray-50 border-b border-gray-200">

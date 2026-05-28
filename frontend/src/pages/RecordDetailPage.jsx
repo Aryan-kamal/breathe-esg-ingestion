@@ -39,16 +39,18 @@ export default function RecordDetailPage() {
   return (
     <div>
       <button onClick={() => navigate('/review')}
-        className="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700 mb-4 transition">
-        <ArrowLeft size={16} /> Back to Review
+        className="flex items-center gap-1.5 text-sm font-medium text-emerald-700 hover:text-emerald-800 mb-6 transition">
+        <ArrowLeft size={16} /> Back to review
       </button>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Main info */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-bold text-gray-900">Record Detail</h2>
+          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+            <div className="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-1">Record detail</p>
+                <h2 className="text-xl font-bold text-gray-900">{record.activity_description || 'Emission record'}</h2>
+              </div>
               <StatusBadge status={record.status} />
             </div>
 
@@ -79,8 +81,8 @@ export default function RecordDetailPage() {
           </div>
 
           {/* Raw Data */}
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Raw Source Data</h3>
+          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">Raw source data</h3>
             <pre className="bg-gray-50 rounded-md p-4 text-xs text-gray-700 overflow-x-auto">
               {JSON.stringify(record.raw_payload, null, 2)}
             </pre>
@@ -90,8 +92,8 @@ export default function RecordDetailPage() {
         {/* Sidebar — actions & audit log */}
         <div className="space-y-6">
           {!isLocked && (
-            <div className="bg-white border border-gray-200 rounded-lg p-5">
-              <h3 className="text-sm font-semibold text-gray-700 mb-3">Review Actions</h3>
+            <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+              <h3 className="text-sm font-semibold text-gray-800 mb-3">Review actions</h3>
               <textarea
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
@@ -121,8 +123,8 @@ export default function RecordDetailPage() {
             </div>
           )}
 
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Audit Trail</h3>
+          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">Audit trail</h3>
             {auditLog.length === 0 ? (
               <p className="text-xs text-gray-400">No review actions yet.</p>
             ) : (

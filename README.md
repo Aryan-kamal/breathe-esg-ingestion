@@ -82,7 +82,9 @@ Use **PostgreSQL** in production (SQLite is local-only). Deploy backend and fron
 3. Render → **New** → **Web Service** → connect repo.
 4. **Root directory:** `backend`
 5. **Build command:** `./build.sh` (install deps + collectstatic only — no DB needed)
-6. **Start command:** `./start.sh` (migrate + seed + gunicorn — DB must be linked)
+6. **Start command** (either works):
+   - `bash start.sh` — requires `backend/start.sh` committed to git
+   - Or one line: `python manage.py migrate --no-input && python manage.py seed && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
 7. **Environment** → add:
 
    | Key | Value |
