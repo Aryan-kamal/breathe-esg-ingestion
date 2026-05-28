@@ -78,25 +78,25 @@ Use **PostgreSQL** in production (SQLite is local-only). Deploy backend and fron
 ### Backend (Render example)
 
 1. Push repo to GitHub.
-2. Render → **New** → **Web Service** → connect repo.
-3. **Root directory:** `backend`
-4. **Build command:**  
-   `pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate && python manage.py seed`
-5. **Start command:**  
-   `gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
-6. Add **PostgreSQL**; link `DATABASE_URL` to the web service.
-7. Environment variables:
+2. Render → **New** → **PostgreSQL** (free) → create DB.
+3. Render → **New** → **Web Service** → connect repo.
+4. **Root directory:** `backend`
+5. **Build command:** `./build.sh` (install deps + collectstatic only — no DB needed)
+6. **Start command:** `./start.sh` (migrate + seed + gunicorn — DB must be linked)
+7. **Environment** → add:
 
    | Key | Value |
    |-----|--------|
+   | `PYTHON_VERSION` | `3.12.3` (important — avoids Render default 3.14) |
+   | `DATABASE_URL` | Link from your Postgres service |
    | `DEBUG` | `False` |
-   | `DJANGO_SECRET_KEY` | (generate) |
-   | `ALLOWED_HOSTS` | `your-api.onrender.com` |
-   | `CORS_ALLOWED_ORIGINS` | `https://your-frontend.vercel.app` |
+   | `DJANGO_SECRET_KEY` | Generate |
+   | `ALLOWED_HOSTS` | `.onrender.com` (or your exact `*.onrender.com` host) |
+   | `CORS_ALLOWED_ORIGINS` | Set after frontend deploy |
 
 8. After deploy, note the API URL (e.g. `https://breathe-esg-api.onrender.com`).
 
-`seed` runs once per empty DB; re-deploys skip duplicate CSV ingestion if records already exist.
+`seed` runs on start; re-deploys skip duplicate CSV ingestion if records already exist.
 
 ### Frontend (Vercel example)
 

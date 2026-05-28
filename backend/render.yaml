@@ -1,4 +1,4 @@
-# Render Blueprint — set "Root Directory" to `backend` when importing, or deploy from this folder.
+# Optional Blueprint — or configure the same values in the Render dashboard.
 databases:
   - name: breathe-esg-db
     plan: free
@@ -10,9 +10,12 @@ services:
     name: breathe-esg-api
     runtime: python
     plan: free
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate && python manage.py seed
-    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
+    rootDir: backend
+    buildCommand: ./build.sh
+    startCommand: ./start.sh
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.3"
       - key: DATABASE_URL
         fromDatabase:
           name: breathe-esg-db
