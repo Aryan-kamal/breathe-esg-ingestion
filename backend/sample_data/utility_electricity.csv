@@ -1,0 +1,26 @@
+Meter ID,Facility,Billing Start,Billing End,Consumption,Unit,Tariff,Read Type
+MTR-001,Frankfurt Main Plant,2024-01-05,2024-02-03,45200,kWh,Commercial Standard,Actual
+MTR-001,Frankfurt Main Plant,2024-02-04,2024-03-05,42800,kWh,Commercial Standard,Actual
+MTR-001,Frankfurt Main Plant,2024-03-06,2024-04-04,38500,kWh,Commercial Standard,Actual
+MTR-001,Frankfurt Main Plant,2024-04-05,2024-05-06,36200,kWh,Commercial Standard,Estimated
+MTR-001,Frankfurt Main Plant,2024-05-07,2024-06-04,34100,kWh,Commercial Standard,Actual
+MTR-001,Frankfurt Main Plant,2024-06-05,2024-07-03,41800,kWh,Commercial Standard,Actual
+MTR-002,Munich Logistics Hub,2024-01-10,2024-02-08,28400,kWh,Industrial Peak,Actual
+MTR-002,Munich Logistics Hub,2024-02-09,2024-03-10,26900,kWh,Industrial Peak,Actual
+MTR-002,Munich Logistics Hub,2024-03-11,2024-04-09,24600,kWh,Industrial Peak,Actual
+MTR-002,Munich Logistics Hub,2024-04-10,2024-05-09,23100,kWh,Industrial Peak,Actual
+MTR-002,Munich Logistics Hub,2024-05-10,2024-06-10,25200,kWh,Industrial Peak,Estimated
+MTR-002,Munich Logistics Hub,2024-06-11,2024-07-10,27800,kWh,Industrial Peak,Actual
+MTR-003,Hamburg Warehouse,2024-01-01,2024-01-31,12.5,MWh,Small Business,Actual
+MTR-003,Hamburg Warehouse,2024-02-01,2024-02-29,11.8,MWh,Small Business,Actual
+MTR-003,Hamburg Warehouse,2024-03-01,2024-03-31,10.2,MWh,Small Business,Actual
+MTR-003,Hamburg Warehouse,2024-04-01,2024-04-30,9.6,MWh,Small Business,Estimated
+MTR-003,Hamburg Warehouse,2024-05-01,2024-05-31,10.8,MWh,Small Business,Actual
+MTR-003,Hamburg Warehouse,2024-06-01,2024-06-30,11.4,MWh,Small Business,Actual
+MTR-004,Berlin Office,2024-01-15,2024-02-14,8200,kWh,Office Rate,Actual
+MTR-004,Berlin Office,2024-02-15,2024-03-14,7800,kWh,Office Rate,Actual
+MTR-004,Berlin Office,2024-03-15,2024-04-14,7200,kWh,Office Rate,Actual
+MTR-004,Berlin Office,2024-04-15,2024-05-14,-500,kWh,Office Rate,Actual
+MTR-004,Berlin Office,2024-05-15,2024-06-14,6800,kWh,Office Rate,Actual
+MTR-004,Berlin Office,2024-06-15,2024-07-14,7600,kWh,Office Rate,Actual
+MTR-001,Frankfurt Main Plant,2024-01-05,2024-02-03,45200,kWh,Commercial Standard,Actual

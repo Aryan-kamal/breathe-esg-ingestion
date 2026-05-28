@@ -1,0 +1,36 @@
+Employee,Travel Type,Origin,Destination,Distance_km,Class,Travel Date,Cost,Currency
+Anna Schmidt,Flight,FRA,LHR,,Economy,2024-01-15,450.00,EUR
+Anna Schmidt,Hotel,,,2,Economy,2024-01-15,320.00,EUR
+Thomas Mueller,Flight,MUC,JFK,,Business,2024-01-22,4200.00,EUR
+Thomas Mueller,Hotel,,,5,Business,2024-01-22,1850.00,EUR
+Thomas Mueller,Flight,JFK,MUC,,Business,2024-01-27,4100.00,EUR
+Lisa Weber,Flight,FRA,SIN,,Economy,2024-02-05,890.00,EUR
+Lisa Weber,Hotel,,,4,Economy,2024-02-05,680.00,EUR
+Lisa Weber,Flight,SIN,FRA,,Economy,2024-02-09,920.00,EUR
+Hans Fischer,Rail,,,580,Economy,2024-02-12,189.00,EUR
+Hans Fischer,Hotel,,,1,Economy,2024-02-12,145.00,EUR
+Maria Klein,Flight,BER,CDG,,Economy,2024-02-20,280.00,EUR
+Maria Klein,Hotel,,,3,Economy,2024-02-20,540.00,EUR
+Thomas Mueller,Flight,MUC,DXB,,Business,2024-03-04,3100.00,EUR
+Thomas Mueller,Hotel,,,4,Business,2024-03-04,1600.00,EUR
+Thomas Mueller,Flight,DXB,MUC,,Business,2024-03-08,3200.00,EUR
+Anna Schmidt,Flight,FRA,AMS,,Economy,2024-03-15,220.00,EUR
+Anna Schmidt,Taxi,,,35,Economy,2024-03-15,65.00,EUR
+Peter Braun,Car Rental,,,1200,Economy,2024-03-20,580.00,EUR
+Lisa Weber,Flight,FRA,ZRH,,Economy,2024-04-02,310.00,EUR
+Lisa Weber,Hotel,,,2,Economy,2024-04-02,380.00,EUR
+Hans Fischer,Flight,FRA,LHR,,Economy,2024-04-10,420.00,EUR
+Hans Fischer,Hotel,,,3,Economy,2024-04-10,510.00,EUR
+Maria Klein,Flight,FRA,ATL,,Economy,2024-04-18,1100.00,EUR
+Maria Klein,Hotel,,,5,Economy,2024-04-18,900.00,EUR
+Maria Klein,Flight,ATL,FRA,,Economy,2024-04-23,1150.00,EUR
+Thomas Mueller,Flight,MUC,ICN,,Business,2024-05-06,5200.00,EUR
+Thomas Mueller,Hotel,,,6,Business,2024-05-06,2400.00,EUR
+Thomas Mueller,Flight,ICN,MUC,,Business,2024-05-12,5100.00,EUR
+Anna Schmidt,Rail,,,320,Economy,2024-05-20,95.00,EUR
+Peter Braun,Flight,FRA,BOM,,Economy,2024-06-01,780.00,EUR
+Peter Braun,Hotel,,,7,Economy,2024-06-01,490.00,EUR
+Peter Braun,Flight,BOM,DEL,,Economy,2024-06-05,120.00,EUR
+Peter Braun,Flight,DEL,FRA,,Economy,2024-06-08,800.00,EUR
+Lisa Weber,Taxi,,,45,Economy,2024-06-15,85.00,EUR
+Hans Fischer,Flight,FRA,SFO,99999,Economy,2024-06-20,1300.00,EUR
